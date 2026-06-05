@@ -1,14 +1,9 @@
-const express = require("express");
-const app = express();
+export default function handler(req, res) {
 
-app.get("/", (req, res) => {
+res.setHeader("Content-Type", "text/plain");
 
-res.set("Content-Type", "text/plain");
-
-res.send(
+res.status(200).send(
 `loadstring(game:HttpGet("https://raw.githubusercontent.com/verizonold937-oss/RexzHubGameSupport/main/RexzHubByRexz"))()`
 );
 
-});
-
-app.listen(3000);
+}
